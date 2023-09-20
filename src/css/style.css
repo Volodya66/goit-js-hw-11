@@ -1,0 +1,58 @@
+.gallery-div{
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px 30px;
+}
+
+img {
+    display: block;
+    width: auto;
+    height: auto;
+}
+
+.info {
+    justify-content: space-around;
+    display: flex;
+    margin: 0;
+    text-align: center;
+    /* column-gap: 20px; */
+}
+
+.search-form{
+    /* background-color: rgb(196, 196, 218); */
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    display: flex;
+    column-gap: 30px;
+    justify-content: center;
+}
+
+.btn-search {
+    border: 0px;
+    display: block;
+    height: 30px;
+    border-radius: 6px;
+    background: linear-gradient(45deg, rgba(213, 54, 54, 0.704), rgb(218, 218, 80), green, rgba(50, 50, 235, 0.665), rgb(226, 34, 226));
+    background-size: 400% 400%;
+    animation: gradientAnimation 3s linear infinite;
+   
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+        /* Початкова позиція звернутого градієнту */
+    }
+
+    100% {
+        background-position: 100% 0%;
+        /* Кінцева позиція звернутого градієнту */
+    }
+}
+
+.input-value-seaech{
+    width: 30%;
+    border-radius: 6px;
+}
