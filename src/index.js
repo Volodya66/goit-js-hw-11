@@ -13,14 +13,12 @@ const form = document.getElementById('search-form');
 const inputValue = form.querySelector('input[name="searchQuery"]');
 const btmForm = form.querySelector('button[type="submit"]');
 const gallery = document.querySelector('.gallery');
-// const target= document.querySelector('.js-guard')
-btmForm.setAttribute("disabled", true)
 
-// console.log(pastNameInp);
+btmForm.setAttribute("disabled", true);
+
 const perPage = 40;
 let page = 1;
 let totalCardInHTML = 0;
-console.log(inputValue.value.length);
 
 inputValue.addEventListener("input", inputSearch);
 function inputSearch() {
@@ -46,7 +44,9 @@ function onClick(evt) {
   };
     clearingPage();
   callRequest(searchParam);
-  
+  inputValue.value = '';
+  inputValue.addEventListener("input", inputSearch);
+  btmForm.setAttribute("disabled", true);
 };
 
 async function callRequest(param) {
