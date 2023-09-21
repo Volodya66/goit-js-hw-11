@@ -12,18 +12,20 @@ async function photoSearch(searchParam,perPage,page) {
     const response = await axios.get(`?key=${API_CEY}&q=${searchParam}
       &image_type=photo&orientation=horizontal&safesearch=true&per_page=${perPage}&page=${page}`);
         
-    if (response.status !== 200) {
-    throw new Error(response.statusText)
-        };
+    // if (response.status !== 200) {
+    // throw new Error(response.statusText)
+    //     };
         
-    // console.log("resp",response);  
-    //     console.log(response.data);
+    // console.log("resp",response);
+        //     console.log(response.data);
+        // Notiflix.Notify.success('Your photos');
+        // console.log(response);
         return response.data;
         
   } catch (error) {
         console.log(error.message);
-        return;
+        
     }; 
 };
 
-export {photoSearch,API_CEY,baseURL}
+export {photoSearch}
