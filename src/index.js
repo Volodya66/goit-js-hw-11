@@ -19,6 +19,7 @@ btmForm.setAttribute("disabled", true);
 const perPage = 40;
 let page = 1;
 let totalCardInHTML = 0;
+let searchParam = '';
 
 inputValue.addEventListener("input", inputSearch);
 function inputSearch() {
@@ -38,7 +39,7 @@ function onClick(evt) {
   inputValue.removeEventListener("input",inputSearch)
   window.removeEventListener('scroll', throttle(handleScroll, 2000));
     
-    const searchParam = inputValue.value.trim();
+    searchParam = inputValue.value.trim();
     if (!searchParam) {
        return
   };
@@ -82,7 +83,7 @@ if (thisPage < totalPage) {
 }
 
 if (thisPage === totalPage) {
-    console.log('hi, BB');
+  searchParam = '';
   window.removeEventListener('scroll', handleScroll);
   if (thisPage !== 1) {
      Notiflix.Notify.info('Congratulations, you have seen all the photos');
@@ -163,7 +164,7 @@ function handleScroll() {
 function newFunction() {
   // console.log("hi");
   onPage()
-  callRequest(inputValue.value)
+  callRequest(searchParam)
 }
 
 
